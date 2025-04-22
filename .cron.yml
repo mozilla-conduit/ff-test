@@ -15,7 +15,7 @@ jobs:
           by-project:
               # No default
               mozilla-beta:
-                  - {weekday: 'Monday', hour: 13, minute: 1}
+                  - {weekday: 'Monday', hour: 13, minute: 2}
                   - {weekday: 'Wednesday', hour: 13, minute: 0}
                   - {weekday: 'Friday', hour: 13, minute: 0}
 
