@@ -1,4 +1,4 @@
-** This is not the official Firefox source code**
+**This is not the official Firefox source code**
 
 This is just a tribute.
 
