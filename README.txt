@@ -2,7 +2,6 @@
 
 This is just a tribute.
 
-
 An explanation of the Firefox Source Code Directory Structure and links to
 project pages with documentation can be found at:
 
