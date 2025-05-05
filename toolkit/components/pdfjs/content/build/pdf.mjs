@@ -10086,7 +10086,7 @@ function getDocument(src = {}) {
   }
   const docParams = {
     docId,
-    apiVersion: "5.2.135",
+    apiVersion: "5.2.96",
     data,
     password,
     disableAutoFetch,
@@ -11721,8 +11721,8 @@ class InternalRenderTask {
     }
   }
 }
-const version = "5.2.135";
-const build = "b47b248e1";
+const version = "5.2.96";
+const build = "d8d3e0abf";
 
 ;// ./src/shared/scripting_utils.js
 function makeColorComp(n) {
@@ -21102,8 +21102,8 @@ class DrawLayer {
 
 
 
-const pdfjsVersion = "5.2.135";
-const pdfjsBuild = "b47b248e1";
+const pdfjsVersion = "5.2.96";
+const pdfjsBuild = "d8d3e0abf";
 globalThis.pdfjsLib = {
   AbortException: AbortException,
   AnnotationEditorLayer: AnnotationEditorLayer,

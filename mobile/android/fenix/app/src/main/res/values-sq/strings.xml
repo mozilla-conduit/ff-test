@@ -1528,8 +1528,6 @@
   <string name="download_search_placeholder">Kërko te shkarkimet</string>
   <!-- Text to indicate that no downloads match the search query. -->
   <string name="download_search_no_results_found">S’u gjetën përfundime</string>
-  <!-- Text for the "Select all" button, which selects all downloaded items in the downloads list. -->
-  <string name="download_select_all_items">Përzgjidhe krejt</string>
   <!--
     Downloads Content Type Filters
 
