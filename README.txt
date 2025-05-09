@@ -1,3 +1,5 @@
+Fx-like repository for dev testing of the conduite suite.
+
 An explanation of the Firefox Source Code Directory Structure and links to
 project pages with documentation can be found at:
 
