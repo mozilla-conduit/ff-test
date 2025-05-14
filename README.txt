@@ -21,3 +21,5 @@ Nightly development builds can be downloaded from:
 
 Keep in mind that nightly builds, which are used by Firefox developers for
 testing, may be buggy.
+
+Put more change to regular branch
