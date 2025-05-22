@@ -25,3 +25,5 @@ testing, may be buggy.
 Put more change to regular branch
 
 testing
+
+testing --yes
