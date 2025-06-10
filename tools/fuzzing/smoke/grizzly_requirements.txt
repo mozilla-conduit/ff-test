@@ -129,7 +129,7 @@ fuzzmanager==0.4.1 \
 grizzly-framework==0.19.0 \
     --hash=sha256:229e7559efa2832000c24cd664f99a75413fbb632a2e6acbb927520e7462b5dd \
     --hash=sha256:7848612e3baa49674af4858b5f5c909659d211a852cdb14d73a3a50a18801a4b
-    # via -r tools/fuzzing/smoke/grizzly_requirements.in
+    # via -r grizzly_requirements.in
 idna==3.3 \
     --hash=sha256:84d9dd047ffa80596e0f246e2eab0b391788b0503584e8945f2368256d2735ff \
     --hash=sha256:9d643ff0a55b762d5cdb124b8eaa99c66322e2157b69160bc32796e824360e6d
@@ -163,7 +163,7 @@ psutil==5.9.4 \
     --hash=sha256:efeae04f9516907be44904cc7ce08defb6b665128992a56957abc9b61dca94b7 \
     --hash=sha256:fd8522436a6ada7b4aad6638662966de0d61d241cb821239b2ae7013d41a43d4
     # via
-    #   -r D:\mozilla-source\mozilla-unified\build\psutil_requirements.txt
+    #   -r ../../../build/psutil_requirements.txt
     #   ffpuppet
     #   grizzly-framework
 pycparser==2.22 \
@@ -225,11 +225,11 @@ pyyaml==6.0.2 \
     --hash=sha256:f753120cb8181e736c57ef7636e83f31b9c0d1722c516f7e86cf15b7aa57ff12 \
     --hash=sha256:ff3824dc5261f50c9b0dfb3be22b4567a6f938ccce4587b38952d85fd9e9afe4
     # via
-    #   -r tools/fuzzing/smoke/grizzly_requirements.in
+    #   -r grizzly_requirements.in
     #   prefpicker
-requests==2.26.0 \
-    --hash=sha256:6c1246513ecd5ecd4528a0906f910e8f0f9c6b8ec72030dc9fd154dc1a6efd24 \
-    --hash=sha256:b8aa58f8cf793ffd8782d3d8cb19e66ef36f7aba4353eec859e74678b01b07a7
+requests==2.32.4 \
+    --hash=sha256:27babd3cda2a6d50b30443204ee89830707d396671944c998b5975b031ac2b2c \
+    --hash=sha256:27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422
     # via
     #   bugsy
     #   fuzzmanager
@@ -247,4 +247,6 @@ urllib3==1.26.7 \
     # via requests
 xvfbwrapper==0.2.9 \
     --hash=sha256:bcf4ae571941b40254faf7a73432dfc119ad21ce688f1fdec533067037ecfc24
-    # via -r tools/fuzzing/smoke/grizzly_requirements.in
+    # via
+    #   -r grizzly_requirements.in
+    #   ffpuppet
