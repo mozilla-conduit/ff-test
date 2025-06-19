@@ -30,3 +30,5 @@ TEST_HARNESS_FILES.gtest += [
 ]
 
 FINAL_LIBRARY = "xul-gtest"
+
+NOOP = "noop"
