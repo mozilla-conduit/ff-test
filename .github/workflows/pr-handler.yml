@@ -16,10 +16,20 @@ jobs:
   close-pr:
     runs-on: ubuntu-latest
     steps:
+
+      # Workflows don't get access to organisation metadata via the GITHUB_TOKEN.
+      # We use the Lando Web App to obtain a token with sufficient permissions.
+      - name: Generate a token
+        id: generate-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.LANDO_WEB_APP_ID }}
+          private-key: ${{ secrets.LANDO_WEB_APP_PRIVATE_KEY }}
+
       - name: Check team membership
         id: team
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
           GH_REPO: ${{ github.repository }}
           AUTHOR: ${{ github.event.pull_request.user.login }}
           ALLOWED_TEAM: ${{ env.ALLOWED_TEAM }}
