@@ -3,9 +3,9 @@ on:
   pull_request_target:
     types: [opened, reopened]
 
-permissions:
-  issues: write
-  pull-requests: write
+# permissions:
+#   issues: write
+#   pull-requests: write
 
 env:
   ALLOWED_TEAM: lando-github-pilot
@@ -34,8 +34,9 @@ jobs:
           AUTHOR: ${{ github.event.pull_request.user.login }}
           ALLOWED_TEAM: ${{ env.ALLOWED_TEAM }}
         run: |
+          set -x
           ORG="${GH_REPO/\/*/}"
-          if gh api "/orgs/${ORG}/teams/${ALLOWED_TEAM}/memberships/${AUTHOR}" --silent 2>/dev/null; then
+          if gh api "/orgs/${ORG}/teams/${ALLOWED_TEAM}/memberships/${AUTHOR}"; then
             echo "is_member=true" >> $GITHUB_OUTPUT
           else
             echo "is_member=false" >> $GITHUB_OUTPUT
