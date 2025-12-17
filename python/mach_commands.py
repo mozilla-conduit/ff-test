@@ -18,7 +18,7 @@ from mozfile import which
 from tqdm import tqdm
 
 
-@Command("python", category="devenv", description="Run Python.")
+@Command('python', category="devenv", description="Run Python.")
 @CommandArgument(
     "--exec-file", default=None, help="Execute this Python file using `exec`"
 )
