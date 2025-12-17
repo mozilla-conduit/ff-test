@@ -1,7 +1,11 @@
-name: Close Pull Request
+name: Handle Pull Request
 on:
   pull_request_target:
     types: [opened, reopened]
+
+permissions:
+  issues: write
+  pull-requests: write
 
 env:
   ALLOWED_TEAM: lando-github-pilot
@@ -18,8 +22,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
           AUTHOR: ${{ github.event.pull_request.user.login }}
+          ALLOWED_TEAM: ${{ env.ALLOWED_TEAM }}
         run: |
-          ORG="${GITHUB_REPO/\/*/}"
+          ORG="${GH_REPO/\/*/}"
           if gh api "/orgs/${ORG}/teams/${ALLOWED_TEAM}/memberships/${AUTHOR}" --silent 2>/dev/null; then
             echo "is_member=true" >> $GITHUB_OUTPUT
           else
@@ -33,7 +38,6 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
           PR: ${{ github.event.pull_request.number }}
-          ALLOWED_TEAM: ${{ env.ALLOWED_TEAM }}
           ALLOWED_PATHS: ${{ env.ALLOWED_PATHS }}
         run: |
           PATTERN=$(echo "${ALLOWED_PATHS}" | xargs | tr ' ' '|')
@@ -53,6 +57,7 @@ jobs:
           gh pr close "${PR}" --comment "(Automated Close) Please do not file pull requests here, see https://firefox-source-docs.mozilla.org/contributing/how_to_submit_a_patch.html"
           gh pr lock "${PR}"
 
+      # Make this a separate job with a correct name when the PR-closer is no longer needed.
       - name: Add Lando link
         if: (steps.team.outputs.is_member == 'true' || steps.paths.outputs.only_allowed == 'true') && github.event.action == 'opened'
         env:
