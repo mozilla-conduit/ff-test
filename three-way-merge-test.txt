@@ -5,7 +5,7 @@ line 4
 line 5
 line 6 -- changed on dev tip
 line 7
-line 8
+line 8 -- changed by patch
 line 9
 line 10
 line 11
