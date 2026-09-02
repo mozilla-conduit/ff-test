@@ -25,7 +25,7 @@ line 24
 line 25 CHANGED BY P5-A
 line 26
 line 27
-line 28
+line 28 CHANGED BY P5-B THEN REBASED DIFFERENTLY
 line 29
 line 30
 line 31
