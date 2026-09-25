@@ -16,7 +16,7 @@ on:
 
 
 env:
-  ALLOWED_TEAM: ent:active-scm-level-1
+  ALLOWED_TEAM: ent:mozilla-conduit-members
 
   GH_REPO: ${{ github.repository }}
   PR: ${{ github.event.pull_request.number }}
