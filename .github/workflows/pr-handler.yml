@@ -16,11 +16,7 @@ on:
 
 
 env:
-  ALLOWED_TEAM: lando-github-pilot
-  ALLOWED_PATHS: |
-    mobile/android/android-components
-    mobile/android/fenix
-    mobile/android/focus-android
+  ALLOWED_TEAM: ent:active-scm-level-1
 
   GH_REPO: ${{ github.repository }}
   PR: ${{ github.event.pull_request.number }}
@@ -55,19 +51,8 @@ jobs:
             echo "is_member=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Check allowed paths
-        id: paths
-        if: steps.team.outputs.is_member == 'true'
-        run: |
-          PATTERN=$(echo "${ALLOWED_PATHS}" | xargs | tr ' ' '|')
-          if gh pr view "${PR}" --json files --jq '.files[].path' | grep -vE "^(${PATTERN})"; then
-            echo "only_allowed=false" >> $GITHUB_OUTPUT
-          else
-            echo "only_allowed=true" >> $GITHUB_OUTPUT
-          fi
-
       - name: Close PR
-        if: steps.team.outputs.is_member != 'true' || steps.paths.outputs.only_allowed != 'true'
+        if: steps.team.outputs.is_member != 'true'
         run: |
           gh pr close "${PR}" --comment "(Automated Close) Please do not file pull requests here, see https://firefox-source-docs.mozilla.org/contributing/how_to_submit_a_patch.html"
           gh pr lock "${PR}"
