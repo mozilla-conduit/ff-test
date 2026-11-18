@@ -25,7 +25,7 @@ ignore_files = [
 
 
 def log_pass(filename, text):
-    print(f"TEST-PASS | {scriptname} | {filename} | {text}")
+    print(f"TEST-PASS | {scriptname} | {filename} | {text}", flush=True)
 
 
 def log_fail(filename, text):
