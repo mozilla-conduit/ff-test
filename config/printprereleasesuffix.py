@@ -9,6 +9,7 @@
 # 2.1a3pre > ""
 # 3.2b4    > " 3.2 Beta 4"
 # 3.2b4pre > ""
+# Hackbot uplift test: applies cleanly on beta.
 import re
 import sys
 
