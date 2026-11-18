@@ -69,7 +69,7 @@ def _nsinstall_internal(argv):
         try:
             options.m = int(options.m, 8)
         except Exception:
-            sys.stderr.write(f"nsinstall: {options.m} is not a valid mode\n")
+            sys.stderr.write(f"nsinstall: {options.m} is not a valid octal mode\n")
             return 1
 
     # just create one directory?
