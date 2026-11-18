@@ -42,7 +42,7 @@ def _nsinstall_internal(argv):
     # The remaining arguments are not used in our tree, thus they're not
     # implented.
     def BadArg(option, opt, value, parser):
-        parser.error(f"option not supported: {opt}")
+        parser.error(f"nsinstall: option not supported: {opt}")
 
     p.add_option(
         "-C", action="callback", metavar="CWD", callback=BadArg, help="NOT SUPPORTED"
